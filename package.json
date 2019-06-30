@@ -1,0 +1,15 @@
+{
+  "name": "@sammyne/vuepress-theme-sammyne",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "ISC",
+  "devDependencies": {
+    "@mdi/font": "^3.7.95",
+    "vuepress": "^1.0.2"
+  },
+  "dependencies": {
+    "@vuepress/theme-default": "^1.0.2",
+    "vuepress-plugin-container": "^2.0.1",
+    "vuetify": "^1.5.16"
+  }
+}

@@ -1,0 +1,31 @@
+@require '~vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
+@require '~@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+
+@require './config'
+@require './vuetify-reset'
+// add back the reset preset by vuepress
+@require './code'
+@require '~prismjs/themes/prism-tomorrow.css'
+
+
+{$contentClass} {
+    a {
+        color: #3eaf7c;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        margin-top: 1rem;
+    }
+
+    .alert-block {
+        p {
+            margin-bottom: unset
+        }
+    }
+}
+
+aside.sidebar {
+    background-color: unset;
+    border-right: unset;
+    left: unset;
+}
