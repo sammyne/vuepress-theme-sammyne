@@ -33,7 +33,7 @@
                       <v-icon small>mdi-clock-outline</v-icon>
                       <span
                         class="body-1 font-weight-thin grey--text ml-1 text--darken-2"
-                      >Sun Jun 09 2019</span>
+                      >{{ item.lastUpdated || 'unknown' }}</span>
                     </v-layout>
                   </v-card-text>
                 </v-card>

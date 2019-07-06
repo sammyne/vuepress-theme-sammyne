@@ -1,7 +1,18 @@
+const dayjs = require('dayjs')
+
 // reference from https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/theme-vue
 module.exports = {
     extend: "@vuepress/theme-default",
     plugins: [
+        [
+            '@vuepress/last-updated',
+            {
+                transformer: (timestamp, lang) => {
+                    // Don't forget to install dayjs yourself
+                    return dayjs(timestamp).format(`MM/DD/YYYY HH:mm:ss`)
+                }
+            },
+        ],
         ['container', {
             type: 'tip',
             defaultTitle: {
@@ -26,5 +37,5 @@ module.exports = {
             before: info => `<v-alert :value="true" class="py-1 alert-block" type="error"><span class="subheading font-weight-black brown--text">${info}</span>`,
             after: "</v-alert>"
         }]
-    ]
+    ],
 }

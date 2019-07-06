@@ -1,6 +1,6 @@
 {
   "name": "@sammyne/vuepress-theme-sammyne",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "ISC",
   "devDependencies": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vuepress/theme-default": "^1.0.2",
+    "dayjs": "^1.8.14",
     "vuepress-plugin-container": "^2.0.1",
     "vuetify": "^1.5.16"
   }

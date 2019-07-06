@@ -4,17 +4,18 @@
 
     <Content class="theme-sammyne-content" />
 
-    <footer class="page-edit">
+    <v-divider class="my-2"></v-divider>
+    <v-layout justify-space-between>
       <div class="edit-link" v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
         <OutboundLink />
       </div>
 
       <div class="last-updated" v-if="lastUpdated">
-        <span class="prefix">{{ lastUpdatedText }}:</span>
-        <span class="time">{{ lastUpdated }}</span>
+        <span class="blue-grey--text">{{ lastUpdatedText }}:</span>
+        <span class="grey--text font-weight-light">{{ lastUpdated }}</span>
       </div>
-    </footer>
+    </v-layout>
 
     <div class="page-nav" v-if="prev || next">
       <p class="inner">
@@ -84,7 +85,8 @@ export default {
         repo,
         editLinks,
         docsDir = "",
-        docsBranch = "master",
+        // editable branch for accepting PR
+        docsBranch = "vuepress",
         docsRepo = repo
       } = this.$site.themeConfig;
 
