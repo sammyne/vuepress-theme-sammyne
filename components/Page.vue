@@ -1,8 +1,8 @@
 <template>
-  <v-flex md8 tag="main" xs12>
+  <v-flex class="theme-sammyne-content" md8 tag="main" xs12>
     <slot name="top" />
 
-    <Content class="theme-sammyne-content" />
+    <Content />
 
     <v-divider class="my-2"></v-divider>
     <v-layout justify-space-between>
