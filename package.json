@@ -1,8 +1,19 @@
 {
   "name": "@sammyne/vuepress-theme-sammyne",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "index.js",
+  "author": "sammyne",
+  "description": "A vuepress theme for blog https://sammyne.github.io/.",
+  "keywords": [
+    "vuepress",
+    "theme",
+    "vue"
+  ],
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sammyne/vuepress-theme-sammyne.git"
+  },
   "devDependencies": {
     "vuepress": "^1.0.2"
   },
