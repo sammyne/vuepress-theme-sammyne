@@ -22,7 +22,7 @@
                   <v-card-title primary-title class="py-2">
                     <div>
                       <a :href="item.path" class="headline mb-0 xml-links">{{ item.title }}</a>
-                      <div>excerpt {{ item.excerpt }}</div>
+                      <div class="excerpt" v-html="item.excerpt"></div>
                     </div>
                   </v-card-title>
                   <v-card-text class="pt-0 xml-address">
@@ -72,7 +72,12 @@ export default {
   components: { Navbar, PageFooter, Sidebar },
   computed: {
     pages() {
-      return this.$site.pages.filter(page => !page.frontmatter.isSummary);
+      const sanitizer = excerpt =>
+        (excerpt || "").replace(/^\s*<h1[^>]*>.*<\/h1>/, "").trim() || "...";
+
+      return this.$site.pages
+        .filter(page => !page.frontmatter.isSummary)
+        .map(page => ({ ...page, excerpt: sanitizer(page.excerpt) }));
     }
   },
   methods: {
