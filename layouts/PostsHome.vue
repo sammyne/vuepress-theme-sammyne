@@ -10,6 +10,7 @@
             {{ pages }}
             -->
             <v-data-iterator
+              :custom-sort="sortPage"
               :items="pages"
               :pagination.sync="pagination"
               :rows-per-page-items="rowsPerPageItems"
@@ -53,19 +54,35 @@ import Navbar from "@theme/components/Navbar";
 import PageFooter from "@theme/components/PageFooter";
 import Sidebar from "@parent-theme/components/Sidebar";
 
+import dayjs, { Dayjs } from "dayjs";
+
+import customParseFormat from "dayjs/plugin/customParseFormat";
+
+dayjs.extend(customParseFormat);
+
 export default {
   data() {
     return {
       pagination: {
-        rowPerPage: 3
+        rowPerPage: 5
       },
-      rowsPerPageItems: [3, 8, 12]
+      rowsPerPageItems: [5, 8, 12]
     };
   },
   components: { Navbar, PageFooter, Sidebar },
   computed: {
     pages() {
       return this.$site.pages.filter(page => !page.frontmatter.isSummary);
+    }
+  },
+  methods: {
+    sortPage(items, index, isDesc) {
+      // fmt must be the same as that used by transformer of '@vuepress/last-updated'
+      const fmt = `MM/DD/YYYY HH:mm:ss`;
+      return items.sort(
+        (x, y) =>
+          dayjs(y.lastUpdated, fmt).unix() - dayjs(x.lastUpdated, fmt).unix()
+      );
     }
   }
 };
