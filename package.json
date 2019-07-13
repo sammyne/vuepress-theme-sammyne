@@ -1,6 +1,6 @@
 {
   "name": "@sammyne/vuepress-theme-sammyne",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "author": "sammyne",
   "description": "A vuepress theme for blog https://sammyne.github.io/.",
