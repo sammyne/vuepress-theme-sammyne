@@ -1,10 +1,8 @@
-
-import Vuetify from "vuetify"
-
-//import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
-//import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+//import Vuetify from "vuetify"
+import vuetify from './plugins/vuetify'
 
 // TODO: apply the A-la-carte
+//import Vuetify from "vuetify/lib"
 
 export default ({
     Vue, // the version of Vue being used in the VuePress app
@@ -13,7 +11,11 @@ export default ({
     siteData // site metadata
 }) => {
     // ...apply enhancements to the app
-    Vue.use(Vuetify, {
-        iconfont: "mdi"
-    })
+    //Vue.prototype.vuetify = vuetify
+    options.vuetify = vuetify;
+    //Vue.use(Vuetify, {
+    //    icons: {
+    //        iconfont: 'mdi',
+    //    },
+    //})
 }
