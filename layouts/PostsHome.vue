@@ -12,24 +12,29 @@
             >
               <template #item="{ item }">
                 <v-card class="transparent" elevation="1">
-                  <v-card-title primary-title class="py-2">
-                    <div>
-                      <a :href="item.path" class="headline mb-0 xml-links">{{ item.title }}</a>
-                      <div class="excerpt" v-html="item.excerpt"></div>
-                    </div>
+                  <v-card-title class="py-2">
+                    <a :href="item.path" class="headline mb-0 xml-links">{{ item.title }}</a>
                   </v-card-title>
-                  <v-card-text class="pt-0 xml-address">
-                    <v-row align="center" class="mb-1">
-                      <v-icon small>mdi-map-marker</v-icon>
-                      <span class="body-1 ml-1">Sammy in Shanghai</span>
-                    </v-row>
-                    <v-row align="center">
-                      <v-icon small>mdi-clock-outline</v-icon>
-                      <span
-                        class="body-1 font-weight-thin grey--text ml-1 text--darken-2"
-                      >{{ item.lastUpdated || 'unknown' }}</span>
-                    </v-row>
+                  <v-card-text class="py-0">
+                    <div class="excerpt" v-html="item.excerpt"></div>
                   </v-card-text>
+                  <v-card-actions>
+                    <div>
+                      <v-chip class="body-2" color="transparent" label small>
+                        <v-icon left small>mdi-map-marker</v-icon>Sammy in Shanghai
+                      </v-chip>
+                      <br />
+                      <v-chip
+                        class="body-2 grey--text text--darken-2"
+                        color="transparent"
+                        label
+                        small
+                      >
+                        <v-icon left small>mdi-clock-outline</v-icon>
+                        {{ item.lastUpdated || 'unknown' }}
+                      </v-chip>
+                    </div>
+                  </v-card-actions>
                 </v-card>
               </template>
             </v-data-iterator>
