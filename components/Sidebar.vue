@@ -10,19 +10,28 @@
 </template>
 
 <script>
-import SidebarLinks from "@theme/components/SidebarLinks.vue";
-import NavLinks from "@theme/components/NavLinks.vue";
+import SidebarLinks from '@theme/components/SidebarLinks.vue'
+import NavLinks from '@theme/components/NavLinks.vue'
 
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
 
   components: { SidebarLinks, NavLinks },
 
-  props: ["items"]
-};
+  props: ['items']
+}
 </script>
 
 <style lang="stylus">
+.v-application {
+  .sidebar {
+    a:not(.active) {
+      /* this is to override that of vuetify */
+      color: #2c3e50;
+    }
+  }
+}
+
 .sidebar {
   ul {
     padding: 0;

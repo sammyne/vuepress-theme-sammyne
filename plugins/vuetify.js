@@ -1,4 +1,4 @@
-import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+//import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 
 import Vue from 'vue'
 
@@ -42,7 +42,7 @@ Vue.use(Vuetify, {
         VContainer,
         VContent,
         VDataIterator,
-    VDivider,
+        VDivider,
         VFooter,
         VIcon,
         VSpacer,

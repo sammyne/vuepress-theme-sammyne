@@ -6,6 +6,7 @@
         <v-row justify="center">
           <v-col sm="12" md="8">
             <v-data-iterator
+              :custom-sort="sortPage"
               :footer-props="footerProps"
               :items="pages"
               :items-per-page.sync="itemsPerPage"
