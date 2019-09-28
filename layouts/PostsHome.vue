@@ -16,9 +16,25 @@
                   <v-card-title class="py-2">
                     <a :href="item.path" class="headline mb-0 xml-links">{{ item.title }}</a>
                   </v-card-title>
+                  <!-- tags -->
+                  <v-card-text class="py-0" v-if="item.frontmatter && item.frontmatter.tags">
+                    <v-chip
+                      v-for="tag in item.frontmatter.tags"
+                      color="pink"
+                      class="px-1 ml-1"
+                      label
+                      small
+                      text-color="white"
+                    >
+                      <v-icon class="ml-0 mr-1" left>mdi-label</v-icon>
+                      {{ tag }}
+                    </v-chip>
+                  </v-card-text>
+                  <!--
                   <v-card-text class="py-0">
                     <div class="excerpt" v-html="item.excerpt"></div>
                   </v-card-text>
+                  -->
                   <v-card-actions>
                     <div>
                       <v-chip class="body-2" color="transparent" label small>
