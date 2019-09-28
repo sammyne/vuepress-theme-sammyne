@@ -26,6 +26,10 @@
     "sass": "^1.22.10",
     "sass-loader": "^7.2.0",
     "vuepress-plugin-container": "^2.0.1",
-    "vuetify": "^2.0.11"
+    "vuetify": "^2.0.19"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.4",
+    "webpack": "^4.0.0"
   }
 }
