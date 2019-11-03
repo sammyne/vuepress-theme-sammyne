@@ -26,7 +26,7 @@
                       small
                       text-color="white"
                     >
-                      <v-icon class="ml-0 mr-1" left>mdi-label</v-icon>
+                      <v-icon class="ml-0 mr-1" left small>mdi-tag</v-icon>
                       {{ tag }}
                     </v-chip>
                   </v-card-text>
